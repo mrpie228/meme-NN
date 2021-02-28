@@ -128,6 +128,8 @@ for epoch in range(n_epochs):
         model.eval()
         predicted_text = evaluate(model, char_to_idx, idx_to_char)
         print(predicted_text)
+        f = open('text.txt','a')
+        f.write(predicted_text)
     
     torch.save(model.state_dict(), 'out.txt')
 
